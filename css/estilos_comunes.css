@@ -1,3 +1,8 @@
+/**********/
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/**********/
+
 * {
     margin: 0;
     padding: 0;
@@ -10,20 +15,84 @@ body {
     flex-direction: column;
 }
 
-header {
-    padding: 50px;
 
-    background-color: pink;
-}
+/* HEADER */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: #200B30;
+        color: white;
+    }
 
-main {
-    flex: 1;
+    /* Ajustes del logo */
+    .logo-container img {
+        height: 60px;
+        width: auto;
+        display: block;
+    }
 
-    background-color: greenyellow;
-}
+    /* Estilos del menú de navegación */
+    .menu-navegacion ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
 
-footer {
-    padding: 30px;
+    .menu-navegacion a,
+    .area-usuario .enlace-acceder {
+        text-decoration: none;
+        color: #eee;
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
 
-    background-color: yellow;
-}
+    .menu-navegacion a:hover,
+    .area-usuario .enlace-acceder:hover {
+        color: #523479;
+    }
+
+    /* Estilos de la zona de usuario */
+    .area-usuario {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .area-usuario:hover .enlace-acceder {
+        color: #523479;
+    }
+
+    .area-usuario img {
+        height: 35px;
+        width: 35px;
+    }
+/* FIN HEADER */
+/**************/
+
+
+/********/
+/* MAIN */
+    main {
+        flex: 1;
+
+        background-color: greenyellow;
+    }
+/* FIN MAIN */
+/************/
+
+
+/**********/
+/* FOOTER */
+    footer {
+        padding: 30px;
+
+        background-color: yellow;
+    }
+/* FIN FOOTER */
+/**************/
