@@ -15,7 +15,6 @@ body {
     flex-direction: column;
 }
 
-
 /* HEADER */
     header {
         display: flex;
@@ -81,7 +80,7 @@ body {
     main {
         flex: 1;
 
-        background-color: greenyellow;
+        background-color: #ddd;
     }
 /* FIN MAIN */
 /************/
@@ -90,9 +89,18 @@ body {
 /**********/
 /* FOOTER */
     footer {
-        padding: 30px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        background-color: #200B30;
+    }
 
-        background-color: yellow;
+    footer > p {
+        color: #eee;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
     }
 /* FIN FOOTER */
 /**************/
