@@ -2,3 +2,147 @@
     display: flex;
     margin: auto auto;
 }
+
+main {
+    background: linear-gradient(to bottom, #200B30, #a486c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 400px;
+    padding: 50px 40px;
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.login-container img {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 30px;
+    opacity: 70%;
+}
+
+/* --- ESTILOS INTERNOS DEL FORMULARIO --- */
+
+/* Ocupar todo el ancho disponible */
+.placeholders {
+    width: 100%;
+    margin-bottom: 20px;
+    color: #eee;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+}
+
+/* Agrupa el icono y el input en la misma línea */
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+
+    /* Esta es la línea blanca transparente que se ve debajo del texto */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 8px;
+}
+
+/* Iconos pequeñitos al lado de los inputs */
+.input-group .input-icon {
+    height: auto;
+    width: 18px;
+    margin: auto 15px auto auto;
+    opacity: 0.8;
+}
+
+/* Icono grande de usuario (le ponemos una clase para no afectar a los otros iconos) */
+.login-container .user-avatar {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+/* Campos de texto */
+.input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white; /* Color del texto al escribir */
+    font-size: 16px;
+    width: 100%;
+    font-family: inherit;
+}
+
+/* Color del texto falso (placeholder) */
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Zona inferior: Remember me y Forgot Password */
+.aceptar-terminos-y-contraseña-olvidada {
+    display: flex;
+    justify-content: space-between; /* Uno a la izquierda, otro a la derecha */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 35px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-style: italic; /* Cursiva como en la imagen */
+    transition: color 0.3s;
+}
+
+.forgot-link:hover {
+    color: white;
+}
+
+/* Botón final */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+
+    /* Gradiente parecido al del botón de la imagen (de morado oscuro a azul) */
+    background: linear-gradient(to right, #411d5e, #5b73d8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+    transform: scale(1.02); /* Efecto sutil al pasar el ratón */
+}
