@@ -18,7 +18,7 @@ main {
 
     width: 100%;
     max-width: 400px;
-    padding: 50px 40px;
+    padding: 30px 40px;
     border-radius: 35px;
 
     background: rgba(255, 255, 255, 0.15);
@@ -226,4 +226,29 @@ main {
     width: 20px;
     margin: 0;
     opacity: 1;
+}
+
+/* --- ENLACE DE REGISTRO --- */
+.registro-link {
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+.registro-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.registro-link a:hover {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
 }
