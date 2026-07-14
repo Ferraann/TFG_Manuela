@@ -38,16 +38,13 @@ main {
 
 /* --- ESTILOS INTERNOS DEL FORMULARIO --- */
 
-/* Ocupar todo el ancho disponible */
 .placeholders {
     width: 100%;
-    margin-bottom: 20px;
     color: #eee;
     font-family: Montserrat, sans-serif;
     font-size: 16px;
 }
 
-/* Agrupa el icono y el input en la misma línea */
 .input-group {
     display: flex;
     align-items: center;
@@ -59,7 +56,6 @@ main {
     padding-bottom: 8px;
 }
 
-/* Iconos pequeñitos al lado de los inputs */
 .input-group .input-icon {
     height: auto;
     width: 18px;
@@ -67,10 +63,10 @@ main {
     opacity: 0.8;
 }
 
-/* Icono grande de usuario (le ponemos una clase para no afectar a los otros iconos) */
+/* Icono grande de usuario */
 .login-container .user-avatar {
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     margin-bottom: 30px;
     opacity: 0.7;
 }
@@ -80,43 +76,58 @@ main {
     background: transparent;
     border: none;
     outline: none;
-    color: white; /* Color del texto al escribir */
+    color: white;
     font-size: 16px;
     width: 100%;
     font-family: inherit;
 }
 
-/* Color del texto falso (placeholder) */
+/* Color del texto del placeholder */
 .input-group input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Zona inferior: Remember me y Forgot Password */
+/* --- ZONA CHECKBOX Y CONTRASEÑA OLVIDADA --- */
+
 .aceptar-terminos-y-contraseña-olvidada {
     display: flex;
-    justify-content: space-between; /* Uno a la izquierda, otro a la derecha */
+    justify-content: space-between; /* Separa los elementos a los extremos */
     align-items: center;
     width: 100%;
-    margin-bottom: 35px;
-    font-size: 13px;
+    margin-bottom: 25px;
     color: rgba(255, 255, 255, 0.7);
+    font-family: Montserrat, sans-serif;
 }
 
+/* Estilos para el texto del checkbox */
 .checkbox-label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px; /* Espacio entre el cuadradito y la palabra */
     cursor: pointer;
+    font-size: 14px;
+    transition: color 0.3s;
 }
 
-.checkbox-label input {
-    cursor: pointer;
+/* Efecto al pasar el ratón por "Recuérdame" */
+.checkbox-label:hover {
+    color: white;
 }
 
+/* Estilo del cuadradito (checkbox) */
+.checkbox-label input[type="checkbox"] {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    /* Esto tiñe el checkbox nativo del navegador del mismo azul que tu botón */
+    accent-color: #408bec;
+}
+
+/* Estilos del enlace de contraseña olvidada */
 .forgot-link {
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    font-style: italic; /* Cursiva como en la imagen */
     transition: color 0.3s;
 }
 
@@ -130,10 +141,9 @@ main {
     padding: 15px;
     border: none;
     border-radius: 12px;
-
-    /* Gradiente parecido al del botón de la imagen (de morado oscuro a azul) */
-    background: linear-gradient(to right, #411d5e, #5b73d8);
+    background-color: #523479;
     color: white;
+    font-family: Montserrat, sans-serif;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -144,5 +154,76 @@ main {
 
 .btn-login:hover {
     opacity: 0.9;
-    transform: scale(1.02); /* Efecto sutil al pasar el ratón */
+    transform: scale(1.02);
+}
+
+/* --- CORRECCIÓN DEL AUTOCOMPLETADO DEL NAVEGADOR --- */
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover,
+.input-group input:-webkit-autofill:focus,
+.input-group input:-webkit-autofill:active {
+    /* Fuerza el color del texto a blanco */
+    -webkit-text-fill-color: white !important;
+
+    /* Mantiene la fuente correcta */
+    font-family: inherit !important;
+
+    /* Retrasa el cambio de color de fondo 5000 segundos, manteniendo así el fondo transparente
+        de tu diseño original */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* --- SEPARADOR "O" --- */
+.separador {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 25px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+}
+
+.separador span {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.separador p {
+    margin: 0 15px;
+}
+
+/* --- BOTÓN DE GOOGLE --- */
+.btn-google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-google:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+.btn-google img {
+    height: 20px;
+    width: 20px;
+    margin: 0;
+    opacity: 1;
 }
