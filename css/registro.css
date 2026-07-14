@@ -1,0 +1,47 @@
+/* ========================================================= */
+/* --- ESTILOS EXCLUSIVOS PARA LA PÁGINA DE REGISTRO --- */
+/* ========================================================= */
+
+/* 1. Ampliamos el contenedor principal para que quepan dos columnas cómodamente */
+.login-container {
+    max-width: 500px; /* En el login era de 400px. Lo hacemos más ancho. */
+}
+
+/* 2. Configuramos el contenedor de las contraseñas */
+.contraseñas {
+    display: flex;
+    gap: 20px; /* Añade un espacio de separación entre los dos campos */
+    width: 100%;
+}
+
+/* 3. Hacemos que cada campo ocupe la mitad del espacio */
+.contraseñas .input-group {
+    width: 50%;
+}
+
+/* 4. Reducimos ligeramente el texto de "placeholder" en las contraseñas
+      para asegurarnos de que no se corte por falta de espacio */
+.contraseñas .input-group input::placeholder {
+    font-size: 14px;
+}
+
+
+/* --- ZONA TÉRMINOS Y CONDICIONES (REGISTRO) --- */
+.terminos-condiciones {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Montserrat, sans-serif;
+}
+
+.terminos-condiciones a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.terminos-condiciones a:hover {
+    color: white;
+}

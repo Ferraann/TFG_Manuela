@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inicio de sesión</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="css/estilos_comunes.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/registro.css">
     <script src="js/retardo_cambio_pagina.js" defer></script>
     <script src="js/login.js" defer></script>
 </head>
@@ -22,34 +23,66 @@
 
 <main>
     <div class="login-container">
-        <img src="src/iconos/user_login.svg" alt="Icono de usuario" class="user-avatar">
+        <img src="src/iconos/user.svg" alt="Icono de usuario" class="user-avatar">
 
         <!-- Zona de inputs -->
         <div class="placeholders">
+            <!-- Grupo Nombre -->
+            <div class="input-group">
+                <!-- Cambia el icono si tienes uno específico para el nombre -->
+                <img src="src/iconos/cara_mujer.png" alt="Icono usuario" class="input-icon" style="width: 18px; height: 18px;">
+                <input type="text" placeholder="Nombre completo" id="nombre" required>
+            </div>
+
             <!-- Grupo Email -->
             <div class="input-group">
                 <img src="src/iconos/email_login.png" alt="Icono email" class="input-icon">
                 <input type="email" placeholder="Introduce tu email" id="email" required>
             </div>
 
-            <!-- Grupo Contraseña -->
-            <div class="input-group">
-                <img src="src/iconos/candado_login.png" alt="Icono contraseña" class="input-icon">
-                <input type="password" placeholder="Introduce tu contraseña" id="password" required>
+            <div class="contraseñas">
+                <!-- Grupo Contraseña -->
+                <div class="input-group">
+                    <img src="src/iconos/candado_login.png" alt="Icono contraseña" class="input-icon">
+                    <input type="password" placeholder="Crea una contraseña" id="password" required>
+                </div>
+
+                <!-- Grupo Repetir Contraseña -->
+                <div class="input-group">
+                    <img src="src/iconos/candado_login.png" alt="Icono contraseña" class="input-icon">
+                    <input type="password" placeholder="Repite tu contraseña" id="confirm-password" required>
+                </div>
             </div>
         </div>
 
-        <!-- Zona de recordar usuario y contraseña olvidada -->
-        <div class="aceptar-terminos-y-contraseña-olvidada">
+        <!-- Zona de aceptar términos -->
+        <div class="terminos-condiciones">
             <label class="checkbox-label">
-                <input type="checkbox" id="remember-me">
-                Aceptar términos y condiciones
+                <input type="checkbox" id="accept-terms" required>
+                Acepto los <a href="#">Términos y condiciones</a>
             </label>
-            <a href="#" class="forgot-link">Forgot Password?</a>
         </div>
 
         <!-- Botón -->
-        <button class="btn-login">LOGIN</button>
+        <button class="btn-login">REGÍSTRATE</button>
+
+        <!-- Separador con los dos spans -->
+        <div class="separador">
+            <span></span>
+            <p>o</p>
+            <span></span>
+        </div>
+
+        <!-- Botón de Google -->
+        <button type="button" class="btn-google">
+            <img src="src/iconos/google.png" alt="Icono de Google">
+            Regístrate con Google
+        </button>
+
+        <!-- Enlace para volver a Iniciar sesión -->
+        <div class="registro-link">
+            ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </div>
     </div>
 </main>
 
