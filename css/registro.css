@@ -1,45 +1,132 @@
 /* ========================================================= */
-/* --- ESTILOS EXCLUSIVOS PARA LA PÁGINA DE REGISTRO --- */
+/* --- ESTILOS EXCLUSIVOS PARA LA PÁGINA DE REGISTRO ---     */
 /* ========================================================= */
 
-/* 1. Ampliamos el contenedor principal para que quepan dos columnas cómodamente */
+/* --- 1. CONTENEDOR PRINCIPAL --- */
 .login-container {
-    max-width: 500px; /* En el login era de 400px. Lo hacemos más ancho. */
+    max-width: 600px;
+    margin: 30px 0;
 }
 
-/* 2. Configuramos el contenedor de las contraseñas */
-.contraseñas {
+
+/* --- 2. SISTEMAS DE COLUMNAS --- */
+.fila-doble {
     display: flex;
-    gap: 20px; /* Añade un espacio de separación entre los dos campos */
+    gap: 20px;
     width: 100%;
 }
 
-/* 3. Hacemos que cada campo ocupe la mitad del espacio */
-.contraseñas .input-group {
+.fila-doble .input-group {
     width: 50%;
 }
 
-/* 4. Reducimos ligeramente el texto de "placeholder" en las contraseñas
-      para asegurarnos de que no se corte por falta de espacio */
-.contraseñas .input-group input::placeholder {
+.fila-triple {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.fila-triple .input-group {
+    width: 33.33%;
+    margin-bottom: 30px; /* Lo reducimos un poco para que el span separador quede mejor */
+}
+
+/* Ajustes de tipografía para que no se corten los textos al dividir la pantalla */
+.fila-doble .input-group input::placeholder,
+.fila-triple .input-group select {
     font-size: 14px;
 }
 
 
-/* --- ZONA TÉRMINOS Y CONDICIONES (REGISTRO) --- */
+/* --- 3. ETIQUETAS Y SEPARADORES SOLICITADOS --- */
+.label-fecha {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* --- 4. SELECTORES (PAÍS, DÍA, MES, AÑO) --- */
+.input-group select {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Hace que la opción por defecto se vea gris como los placeholders */
+.input-group select:invalid {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* El fondo de las opciones al desplegar */
+.input-group select option {
+    background-color: #200B30;
+    color: white;
+}
+
+
+/* --- 5. CONTRASEÑAS Y OJITO --- */
+.password-group {
+    position: relative;
+    padding-right: 35px; /* Deja espacio para que el texto no se monte encima del ojo */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px; /* Pegado a la derecha */
+    bottom: 8px; /* Anclado justo sobre la línea blanca */
+    width: 22px; /* Forzamos un tamaño para sobreescribir la clase input-icon */
+    height: auto;
+    margin: 0;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.2s;
+    opacity: 0.6;
+}
+
+.toggle-password:hover {
+    opacity: 1; /* Se ilumina al pasar el ratón */
+    transform: scale(1.1); /* Crece un poquito para dar feedback visual */
+}
+
+
+/* --- 6. TÉRMINOS Y CONDICIONES --- */
 .terminos-condiciones {
-    display: flex;
-    justify-content: flex-start;
     width: 100%;
     margin-bottom: 25px;
+    cursor: pointer;
     color: rgba(255, 255, 255, 0.7);
     font-family: Montserrat, sans-serif;
+}
+
+.terminos-condiciones label {
+    display: flex;
+    align-items: center;
+}
+
+.terminos-condiciones label input {
+    margin-right: 5px;
+}
+
+.terminos-condiciones input[type="checkbox"] {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    /* Esto tiñe el checkbox nativo del navegador del mismo azul que tu botón */
+    accent-color: #408bec;
 }
 
 .terminos-condiciones a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: underline;
     transition: color 0.3s;
+    margin-left: 4px;
 }
 
 .terminos-condiciones a:hover {
