@@ -8,12 +8,20 @@
     margin: 30px 0;
 }
 
+.logo-container a img {
+    filter: saturate(200%);
+}
+
 
 /* --- 2. SISTEMAS DE COLUMNAS --- */
 .fila-doble {
     display: flex;
     gap: 20px;
     width: 100%;
+}
+
+.fila-doble:nth-child(1) {
+    margin-top: 30px;
 }
 
 .fila-doble .input-group {
@@ -103,28 +111,6 @@
     color: rgba(255, 255, 255, 0.7);
     font-family: Montserrat, sans-serif;
     cursor: pointer;
-}
-
-/* Alineación y espacio entre el checkbox y el texto */
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Separación correcta */
-    cursor: pointer;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.checkbox-label:hover {
-    color: white;
-}
-
-/* Estilo del cuadradito y bloqueo de clic */
-.checkbox-label input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    accent-color: #408bec; /* El azul bonito de tu diseño */
-    pointer-events: none; /* Bloquea el clic manual para obligar a usar el popup */
 }
 
 /* Estilo del texto que simula el enlace */
