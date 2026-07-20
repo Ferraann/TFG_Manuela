@@ -98,7 +98,7 @@
 
 /* --- 6. TÉRMINOS Y CONDICIONES --- */
 .terminos-condiciones {
-    width: 100%;
+    margin-right: auto;
     margin-bottom: 25px;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.7);
