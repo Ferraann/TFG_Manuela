@@ -28,10 +28,9 @@
 
 .fila-triple .input-group {
     width: 33.33%;
-    margin-bottom: 30px; /* Lo reducimos un poco para que el span separador quede mejor */
+    margin-bottom: 30px;
 }
 
-/* Ajustes de tipografía para que no se corten los textos al dividir la pantalla */
 .fila-doble .input-group input::placeholder,
 .fila-triple .input-group select {
     font-size: 14px;
@@ -60,12 +59,10 @@
     cursor: pointer;
 }
 
-/* Hace que la opción por defecto se vea gris como los placeholders */
 .input-group select:invalid {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* El fondo de las opciones al desplegar */
 .input-group select option {
     background-color: #200B30;
     color: white;
@@ -75,14 +72,14 @@
 /* --- 5. CONTRASEÑAS Y OJITO --- */
 .password-group {
     position: relative;
-    padding-right: 35px; /* Deja espacio para que el texto no se monte encima del ojo */
+    padding-right: 35px;
 }
 
 .toggle-password {
     position: absolute;
-    right: 5px; /* Pegado a la derecha */
-    bottom: 8px; /* Anclado justo sobre la línea blanca */
-    width: 22px; /* Forzamos un tamaño para sobreescribir la clase input-icon */
+    right: 5px;
+    bottom: 8px;
+    width: 22px;
     height: auto;
     margin: 0;
     cursor: pointer;
@@ -91,44 +88,132 @@
 }
 
 .toggle-password:hover {
-    opacity: 1; /* Se ilumina al pasar el ratón */
-    transform: scale(1.1); /* Crece un poquito para dar feedback visual */
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 
-/* --- 6. TÉRMINOS Y CONDICIONES --- */
+/* --- 6. TÉRMINOS Y CONDICIONES Y POPUP --- */
+
 .terminos-condiciones {
-    margin-right: auto;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
     margin-bottom: 25px;
-    cursor: pointer;
     color: rgba(255, 255, 255, 0.7);
     font-family: Montserrat, sans-serif;
+    cursor: pointer;
 }
 
-.terminos-condiciones label {
+/* Alineación y espacio entre el checkbox y el texto */
+.checkbox-label {
     display: flex;
     align-items: center;
-}
-
-.terminos-condiciones label input {
-    margin-right: 5px;
-}
-
-.terminos-condiciones input[type="checkbox"] {
+    gap: 8px; /* Separación correcta */
     cursor: pointer;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.checkbox-label:hover {
+    color: white;
+}
+
+/* Estilo del cuadradito y bloqueo de clic */
+.checkbox-label input[type="checkbox"] {
     width: 15px;
     height: 15px;
-    /* Esto tiñe el checkbox nativo del navegador del mismo azul que tu botón */
-    accent-color: #408bec;
+    accent-color: #408bec; /* El azul bonito de tu diseño */
+    pointer-events: none; /* Bloquea el clic manual para obligar a usar el popup */
 }
 
-.terminos-condiciones a {
+/* Estilo del texto que simula el enlace */
+.enlace-terminos {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: underline;
     transition: color 0.3s;
-    margin-left: 4px;
+    cursor: pointer;
 }
 
-.terminos-condiciones a:hover {
+.enlace-terminos:hover {
+    color: white;
+}
+
+/* Evita que el usuario pueda marcar el checkbox manualmente con el ratón */
+#accept-terms {
+    pointer-events: none;
+}
+
+/* Fondo oscuro que cubre toda la pantalla */
+.popup-overlay {
+    display: none; /* Oculto hasta que lo llame el JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caja del popup */
+.popup-content {
+    background: linear-gradient(to bottom, #200B30, #523479);
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    font-size: 22px;
+}
+
+/* Caja de texto con scroll interno */
+.popup-texto {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 25px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    padding-right: 15px;
+}
+
+/* Estilo para la barra de scroll (Scrollbar) del popup */
+.popup-texto::-webkit-scrollbar {
+    width: 6px;
+}
+.popup-texto::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+/* La 'X' para cerrar */
+.cerrar-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.cerrar-popup:hover {
     color: white;
 }

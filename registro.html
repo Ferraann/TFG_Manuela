@@ -112,10 +112,11 @@
         </div>
 
         <!-- Zona de aceptar términos -->
-        <div class="terminos-condiciones">
-            <label for="accept-terms">
+        <div class="terminos-condiciones" id="abrir-popup">
+            <!-- Añadimos class="checkbox-label" aquí -->
+            <label class="checkbox-label">
                 <input type="checkbox" id="accept-terms" required>
-                Acepto los <a href="#">Términos y condiciones</a>
+                Acepto los <span class="enlace-terminos">Términos y condiciones</span>
             </label>
         </div>
 
@@ -134,6 +135,27 @@
 
         <div class="registro-link">
             ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- POPUP TÉRMINOS Y CONDICIONES (Oculto por defecto) -->
+    <!-- ============================================== -->
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-content">
+            <span class="cerrar-popup" id="cerrar-popup">&times;</span>
+            <h2>Términos y Condiciones</h2>
+
+            <div class="popup-texto">
+                <p>Bienvenido a nuestra plataforma. Al utilizar nuestros servicios, aceptas las siguientes condiciones que son obligatorias para el registro:</p>
+                <br>
+                <p><strong>1. Privacidad de los datos:</strong> Tus datos serán cifrados y guardados en nuestros servidores, no siendo vendidos a terceros.</p>
+                <p><strong>2. Uso correcto:</strong> Te comprometes a no usar esta plataforma para fines ilícitos o malintencionados.</p>
+                <p><strong>3. Cancelación:</strong> Nos reservamos el derecho de eliminar cualquier cuenta que infrinja estas normas.</p>
+            </div>
+
+            <!-- Botón que activará el checkbox -->
+            <button type="button" id="btn-aceptar-popup" class="btn-login">ACEPTAR</button>
         </div>
     </div>
 </main>
